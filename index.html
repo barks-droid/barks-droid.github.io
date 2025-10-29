@@ -1,192 +1,169 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kevin Barker | Robotics Portfolio</title>
   <style>
     body {
-      font-family: "Segoe UI", Roboto, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0b0c10;
+      color: #e6e6e6;
       margin: 0;
-      background-color: #0d1117;
-      color: #e6edf3;
-      line-height: 1.6;
+      padding: 0;
+      overflow-x: hidden;
     }
 
-```
-header {
-  text-align: center;
-  padding: 60px 20px 30px;
-  background: linear-gradient(135deg, #1f2937, #111827);
-  border-bottom: 2px solid #ff007a;
-}
+    header {
+      text-align: center;
+      padding: 3em 1em 2em;
+      color: #ff7f11;
+      font-size: 2.5em;
+      font-weight: bold;
+      position: relative;
+      z-index: 2;
+    }
 
-header h1 {
-  font-size: 2.5rem;
-  margin: 0;
-  color: #ffffff;
-}
+    nav {
+      text-align: center;
+      margin-bottom: 2em;
+    }
 
-header p {
-  font-size: 1.1rem;
-  color: #a1a1aa;
-}
+    nav a {
+      color: #ff7f11;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+    }
 
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 30px;
-}
+    nav a:hover {
+      text-decoration: underline;
+    }
 
-section {
-  margin-bottom: 50px;
-}
+    .container {
+      width: 80%;
+      margin: auto;
+      position: relative;
+      z-index: 2;
+    }
 
-h2 {
-  border-left: 4px solid #ff007a;
-  padding-left: 10px;
-  color: #ff007a;
-  margin-bottom: 20px;
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
+    .project {
+      margin: 2em 0;
+      padding: 1.5em;
+      border-left: 4px solid #1f2833;
+      background-color: rgba(15, 20, 25, 0.6);
+      border-radius: 8px;
+    }
 
-.project {
-  margin-bottom: 35px;
-}
+    .project img {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 1em;
+    }
 
-.project img {
-  width: 100%;
-  max-height: 300px;
-  object-fit: cover;
-  border-radius: 10px;
-  border: 1px solid #333;
-}
+    .project a.repo-link {
+      color: #ff7f11;
+      font-weight: bold;
+      text-decoration: none;
+    }
 
-.project h3 {
-  margin: 15px 0 8px;
-  color: #e6edf3;
-}
+    .project a.repo-link:hover {
+      text-decoration: underline;
+    }
 
-.project p {
-  color: #c0c0c0;
-  font-size: 0.95rem;
-}
+    .background-lines {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+    }
 
-.skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
+    .line {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(255,127,17,0.15), rgba(255,255,255,0.02));
+      opacity: 0.6;
+    }
 
-.skill {
-  background-color: #1e293b;
-  border-radius: 6px;
-  padding: 6px 10px;
-  font-size: 0.9rem;
-  color: #e6edf3;
-  border: 1px solid #333;
-}
+    .circle-outline {
+      position: absolute;
+      border: 1.5px solid rgba(255,127,17,0.4);
+      border-radius: 50%;
+      opacity: 0.4;
+    }
 
-footer {
-  text-align: center;
-  padding: 30px;
-  background-color: #111827;
-  border-top: 1px solid #333;
-  color: #a1a1aa;
-}
-
-a {
-  color: #ff007a;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 600px) {
-  header h1 { font-size: 2rem; }
-  .container { padding: 20px; }
-}
-```
-
+    footer {
+      text-align: center;
+      padding: 2em;
+      color: #888;
+      font-size: 0.9em;
+    }
   </style>
 </head>
-
 <body>
-  <header>
-    <h1>Kevin Barker</h1>
-    <p>Aspiring Robotics Engineer | Builder | Innovator</p>
-    <p><a href="mailto:kevinbarker@email.com">kbark391@email.com</a> |
-       <a href="https://github.com/barks-droid">GitHub</a> |
-       <a href="resume.pdf">Resume</a></p>
-    <p><em>“I design and build machines that merge mechanical precision with creative chaos.”</em></p>
-  </header>
+
+  <div class="background-lines">
+    <div class="line" style="left: 2%; width: 3px; background-color: rgba(255,127,17,0.3);"></div>
+    <div class="line" style="left: 5%; width: 2px; background-color: rgba(255,255,255,0.15);"></div>
+    <div class="line" style="left: 8%; width: 1px; background-color: rgba(173,216,230,0.2);"></div>
+    <div class="circle-outline" style="top: 10%; left: 6%; width: 150px; height: 150px;"></div>
+    <div class="circle-outline" style="top: 60%; left: 4%; width: 250px; height: 250px;"></div>
+    <div class="circle-outline" style="top: 85%; left: 10%; width: 100px; height: 100px;"></div>
+  </div>
+
+  <header>Kevin Barker | Robotics Portfolio</header>
+  <nav>
+    <a href="#battlebot">Battlebot</a>
+    <a href="#assistant">Voice Assistant</a>
+    <a href="#ftc">FTC Robotics</a>
+  </nav>
 
   <div class="container">
-    <section>
-      <h2>Feature Project</h2>
-      <div class="project">
-        <img src="FRED.jpg" alt="Fred Battlebot">
-        <h3>“Fred” – 3lb Vertical Spinner Battlebot (NHRL)</h3>
-        <p>Designed and built a 3lb combat robot featuring an angled front wedge and high-speed vertical spinner.
-           Led a five-person team through CAD design, fabrication, and real-time competition repairs.
-           Achieved full-weight optimization and durability.</p>
-      </div>
+
+    <section id="battlebot" class="project">
+      <h2>Fred – 3lb Vertical Spinner Battlebot</h2>
+      <p>Built and led a 3lb combat robot team competing in the NHRL League. Fred is a low-profile vertical spinner optimized for energy efficiency, balance, and impact dynamics.</p>
+      <ul>
+        <li>3D printed frame with reinforced aluminum armor</li>
+        <li>Angled wedge design to control opponent engagement</li>
+        <li>Custom spinner motor mount and weight optimization</li>
+      </ul>
+      <img src="images/fred.jpg" alt="Fred Battlebot">
+      <p><a class="repo-link" href="battlebot.html">View Full Repository →</a></p>
     </section>
 
-```
-<section>
-  <h2>Voice Assistant Project</h2>
-  <div class="project">
-    <img src="edward.jpg" alt="Edward AI Assistant">
-    <h3>“Edward” – ESP32 AI Assistant</h3>
-    <p>Built a Wi-Fi-enabled assistant using ESP32, Deepgram, and OpenAI APIs for speech recognition and response.
-       Integrated MP3 playback, text-to-speech, and LED control.
-       Currently upgrading to “Archibald” on Raspberry Pi for faster audio streaming and advanced processing.</p>
-  </div>
-</section>
+    <section id="assistant" class="project">
+      <h2>Edward – ESP32 Personal AI Assistant</h2>
+      <p>Developed a voice assistant using ESP32 and APIs from Deepgram, OpenAI, and Google TTS for speech recognition and real-time response.</p>
+      <ul>
+        <li>Integrated analog microphone (MAX4466) for audio input</li>
+        <li>Custom cloud pipeline for transcription, GPT logic, and TTS</li>
+        <li>Currently upgrading to “Archibald” with Raspberry Pi and improved concurrency</li>
+      </ul>
+      <img src="images/edward.jpg" alt="Edward Assistant">
+      <p><a class="repo-link" href="assistant.html">View Full Repository →</a></p>
+    </section>
 
-<section>
-  <h2>FTC Robotics Leadership</h2>
-  <div class="project">
-    <img src="ftc.jpg" alt="FTC Robotics Team">
-    <h3>FTC Robotics – Lead Engineer & Captain</h3>
-    <p>Designed drivetrain and scoring systems through iterative prototyping.
-       Trained teammates in mechanical fabrication and wiring.
-       Promoted to captain for innovation and leadership in design strategy.</p>
-  </div>
-</section>
-
-<section>
-  <h2>Technical Skills</h2>
-  <div class="skills-list">
-    <span class="skill">3D Printing</span>
-    <span class="skill">Autodesk Fusion</span>
-    <span class="skill">Soldering</span>
-    <span class="skill">Prototyping</span>
-    <span class="skill">Robotics Design</span>
-    <span class="skill">Arduino / ESP32 / Raspberry Pi</span>
-    <span class="skill">Applied Math and Physics</span>
-    <span class="skill"> C++</span>
-  </div>
-</section>
-
-<section>
-  <h2>Quick Facts</h2>
-  <p><strong>GPA:</strong> 4.57  <strong>SAT:</strong> 1490<br>
-  <strong>Honors:</strong> National Honor Society, AP Scholar, High Honors<br>
-  <strong>Interests:</strong> Robotics, mechanical design, combat robotics, AI integration</p>
-</section>
-```
+    <section id="ftc" class="project">
+      <h2>FTC Robotics Team – Lead Engineer & Captain</h2>
+      <p>Served as design lead and captain for high school FTC team. Spearheaded the creation of modular drivetrain and manipulator designs using CAD and rapid prototyping.</p>
+      <ul>
+        <li>Managed a 6-person design and fabrication team</li>
+        <li>Oversaw CAD and FEA analysis on critical assemblies</li>
+        <li>Trained underclassmen in wiring, mechanical systems, and control integration</li>
+      </ul>
+      <img src="images/ftc.jpg" alt="FTC Team">
+      <p><a class="repo-link" href="ftc.html">View Full Repository →</a></p>
+    </section>
 
   </div>
 
   <footer>
-    <p>“Every mechanism tells a story. Mine just happen to spin at 8,000 RPM.”</p>
+    <p>© 2025 Kevin Barker | Designed with precision and chaos in equal measure.</p>
   </footer>
 </body>
 </html>
