@@ -87,13 +87,13 @@
       <div>
         <section class="card" id="overview">
           <div class="section-title"><div class="dot"></div><h2 style="margin:0">Overview</h2></div>
-          <p>Fred is a compact competition robot focused on delivering high kinetic energy impacts with repeatable reliability. The design emphasizes energy transfer efficiency, quick serviceability, and survivability in bracket-style matches.</p>
+          <p>Fred is a compact competition robot focused on delivering high kinetic energy impacts to the underbellies of opponents. The design emphasizes energy transfer efficiency, quick serviceability, and aggressive strategy in bracket-style matches.</p>
 
           <h3>Performance Highlights</h3>
           <ul>
-            <li>Peak spin speed: ~8,000 RPM (measured)</li>
-            <li>Approx. 3 lb (weight-legal with 0.8 oz margin)</li>
-            <li>Modular weapon assembly for rapid swapouts</li>
+            <li>Peak spin speed: ~6,800 RPM (calcuated)</li>
+            <li>Approx. 3 lb (weight-legal)</li>
+            <li>Solid 1 lb weapon system which can deliver a max of roughly 125 joules of kinetic energy upon impact (calculated)</li>
           </ul>
         </section>
 
@@ -103,22 +103,23 @@
           <h3>Mechanical Design</h3>
           <p class="muted">Chassis & Structure</p>
           <ul>
-            <li>Low-profile 3D-printed chassis with integrated ribbing for stiffness</li>
-            <li>Aluminum and UHMW armor layout to deflect hits and protect internals</li>
-            <li>Optimized mass distribution to lower moment of inertia around drive axis</li>
+            <li>Low-profile 3D-printed chassis designed with pockets and "crumple zones" tp isolate impacts</li>
+            <li>Aluminum front plate to block head on attacks and volley under opponents</li>
+            <li>Optimized mass distribution to lower center of mass, making the structure more stable and controllable</li>
           </ul>
 
           <h3>Weapon & Drive</h3>
           <ul>
-            <li>Brushless motor driving a tapered titanium spinner</li>
-            <li>Custom motor mount with shear-pin safety and easy-access bearings</li>
-            <li>Independent two-wheel drive using high-torque DC gearmotors</li>
+            <li>Brushless 920kv motor serves as the weapon pulley</li>
+            <li>Custom motor mount made of petg, which distributes impact shock across the chassis and downwards into the wheels</li>
+            <li>Belt driven ack-wheel drive using high-torque DC gearmotors (Gecko v2 motors from Just cuz robotics)</li>
+            <li>Shore 30 Silicon molded wheels for high traction</li>
           </ul>
 
           <h3>Electronics & Controls</h3>
           <ul>
-            <li>ESC + receiver for weapon control; robust power distribution with polyfuse protection</li>
-            <li>Battery: 2S LiPo (2200 mAh) optimized for burst power</li>
+            <li>ESC + receiver for weapon control and drive control, using Radiolink transmitter/reciever, Weka 2.0 dual channel brushed ESC, and generic 20A brushless ESC</li>
+            <li>Battery: 4S LiPo (1500 mAh), offering higher voltage for the drive and weapon systems to operate much more aggressively</li>
             <li>Wiring harness designed for quick field repairs</li>
           </ul>
 
@@ -126,13 +127,32 @@
 
         <section class="card" id="testing" style="margin-top:18px">
           <div class="section-title"><div class="dot"></div><h2 style="margin:0">Testing & Iteration</h2></div>
-          <p>Testing focused on impact survivability and spin-up time. Iterations included reinforcement of the hub, new balancing procedures for the spinner, and improved bite geometry on the weapon edge.</p>
-
-          <h3>Lessons Learned</h3>
+         
+          <h3> Version 0</h3>
           <ul>
-            <li>Balancing at sub-milligram precision drastically reduced vibration-related failures</li>
-            <li>Modular armor allows rapid on-site repair between matches</li>
-            <li>Torque calculations and energy models helped predict damage thresholds</li>
+            <li>Weapon Motor and torque calculations were confirmed</li>
+            <li>Belt was insufficient and lacked proper strength</li>
+            <li>Belt mounts wore down quickly</li>
+            <li>Belt slippage decreased the effectiveness of energy transfer</li>
+            <li>need to fix weapon system</li>
+          </ul>
+        </section>
+
+          <h3> Version 1</h3>
+          <ul>
+            <li>Aluminum weapon pulley mounted to motor</li>
+            <li>larger reduction between motor and weapon pulleys</li>
+            <li>Spinner spun up to full speed and demonstrated consistent spin up time</li>
+            <li>Weapon vibrations shook the entire chassis and weapon should be realigned</li>
+          </ul>
+        </section>
+
+         <h3> Version 2</h3>
+          <ul>
+            <li>added more robust bearings for the weapon</li>
+            <li>fixed the "weapon wobble" by fixing the weapon mounting to the horizontal shaft more securely</li>
+            <li>Motor placement was changed to keep it better protected from potential impacts</li>
+            <li>Construction of weapon mounts distributes weight into the chassis rather than absorbing the majority of the impact</li>
           </ul>
         </section>
 
@@ -159,8 +179,8 @@
         <div class="card" style="margin-top:18px">
           <h3>Gallery</h3>
           <div class="gallery">
-            <img src="images/fred_face.jpg" alt="Fred face">
-            <img src="images/fred_inaction.jpg" alt="Fred in action">
+            <img src="Untitled design (3).png" alt="Team Logo">
+            <img src="FRED.jpg" alt="Side Profile">
             <img src="images/fred_internals.jpg" alt="Internals">
             <img src="images/fred_test.jpg" alt="Test rig">
           </div>
