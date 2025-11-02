@@ -31,8 +31,10 @@
 
     .card{background:var(--card); border-radius:var(--radius); padding:20px; box-shadow:0 6px 20px rgba(0,0,0,0.6); border-left:5px solid rgba(255,127,17,0.18);}
 
+    /* two-column layout for the left content + right column */
     .grid{display:grid; grid-template-columns: 1fr 320px; gap:20px; align-items:start}
-    .col-right .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));}
+    .left-col{display:block}
+    .col-right{padding-left:8px}
 
     h2{color:#f4f4f4; margin:6px 0 12px}
     h3{margin:0 0 8px; color:var(--accent)}
@@ -83,8 +85,9 @@
       </div>
     </header>
 
+    <!-- START grid: only the sections that should sit alongside the right column live inside this grid -->
     <div class="grid">
-      <div>
+      <div class="left-col">
         <section class="card" id="overview">
           <div class="section-title"><div class="dot"></div><h2 style="margin:0">Overview</h2></div>
           <p>Fred is a compact competition robot focused on delivering high kinetic energy impacts to the underbellies of opponents. The design emphasizes energy transfer efficiency, quick serviceability, and aggressive strategy in bracket-style matches.</p>
@@ -126,6 +129,7 @@
 
         </section>
 
+        <!-- weapon testing stays with the left column -->
         <section class="card" id="testing" style="margin-top:18px">
           <div class="section-title"><div class="dot"></div><h2 style="margin:0">Weapon Testing & Iteration</h2></div>
          
@@ -157,79 +161,12 @@
 
       </div>
 
-            <section class="card" id="testing" style="margin-top:18px">
-          <div class="section-title"><div class="dot"></div><h2 style="margin:0">Driving Testing & Iteration</h2></div>
-         
-          <h3> Version 0</h3>
-          <ul>
-            <li>determining belt material and size</li>
-            <li>initial belt was too thick and to short - caused too much tension between the wheels</li>
-            <li>wheel design began with plastic PLA circles with rubber bands glued on</li>
-            <li>Needed better belt and better wheels</li>
-           
-          </ul>
-      
-          <h3> Version 1</h3>
-          <ul>
-            <li> used a smaller polyurethane belt which could be crimped to the proper size</li>
-            <li>substituted rubber bands for TPU sleeves around wheels</li>
-            <li>TPU did not maintain traction sufficiently</li>
-        
-          </ul>
-      
-         <h3> Version 2</h3>
-          <ul>
-            <li>added bearings to the front wheels</li>
-            <li>used shore 30 silicon molded wheels to provide better traction</li>
-            <li>molds failed to demold properly</li>
-            <li> wheel speed was too slow</li>
-          </ul>
-          <h3> Version 3</h3>
-          <ul>
-            <li> fixed the wheel mold to allow easier demolding</li>
-            <li>upgraded battery from 3s lipo to 4s lipo for better speed</li>
-          </ul>
-        </section>
-
-      </div>
-   <section class="card" id="testing" style="margin-top:18px">
-          <div class="section-title"><div class="dot"></div><h2 style="margin:0">Chassis Testing & Iteration</h2></div>
-         
-          <h3> Version 0</h3>
-          <ul>
-            <li>initial design was made of 3 main bodies of PLA (base, front, and back) as well as two PLA sideguards</li>
-            <li>Screws stripped inside the plastic, shape of body left no room for electronics</li>
-            <li>weapon was mounted inside the chassis</li>
-          
-           
-          </ul>
-      
-          <h3> Version 1</h3>
-          <ul>
-            <li> Moved weapon forward to leave more space for electronics</li>
-            <li>added heat inserts for screws</li>
-            <li>Chassis shattered easily during impact testing</li>
-        
-          </ul>
-      
-         <h3> Version 2</h3>
-          <ul>
-            <li>Changed Chassis design entirely, leaving a gap in the middle and two side compartments to house electronics</li>
-            <li>New design employed PETG for weapon mounts and sideguards, but continued to use PLA for the main chassis</li>
-            <li>Impact testing revealed the chassis as a whole was more flexible and could adequately isolate impacts to reduce damage to the full system</li>
-           
-          </ul>
-        
-        </section>
-
-      </div>
-    
+      <!-- RIGHT COLUMN: Quick Specs, Gallery, Team & Roles -->
       <aside class="col-right">
         <div class="card">
           <h3>Quick Specs</h3>
           <div class="specs">
             <div class="spec"><strong>Weight</strong><span>~1.36 kg (3 lb)</span></div>
-            
             <div class="spec"><strong>Spinner Dia.</strong><span>4.2 in</span></div>
             <div class="spec"><strong>Weapon Motor</strong><span>Brushless, 920 kv</span></div>
             <div class="spec"><strong>Battery</strong><span>4S LiPo, 1500 mAh</span></div>
@@ -237,16 +174,18 @@
           </div>
 
           <h3 style="margin-top:14px">Competitions:</h3>
-         
           <li>Nov 1, 2025</li>
-          <h3 style="margin-top:14px">About Competition:</h3> 
-          <li> Just about everything that could go wrong did go wrong. The day before the competition, our team passed safety inspection with no issues. The bot performed exactly as intended, showing excellent ground control, speed, and striking power. Even on the morning of the event, when we tested it in the pits, everything was still operating perfectly. Then, during the loading for the first match, the left drivetrain suddenly seized. This eliminated our initial advantage and made it difficult to maneuver effectively or deliver clean hits.
+
+          <h3 style="margin-top:14px">About Competition:</h3>
+          <p style="color:var(--muted); margin:0;">
+Just about everything that could go wrong did go wrong. The day before the competition, our team passed safety inspection with no issues. The bot performed exactly as intended, showing excellent ground control, speed, and striking power. Even on the morning of the event, when we tested it in the pits, everything was still operating perfectly. Then, during the loading for the first match, the left drivetrain suddenly seized. This eliminated our initial advantage and made it difficult to maneuver effectively or deliver clean hits.
 
 The chassis, which had been designed to isolate single impacts, began to deform under repeated strikes. After we tapped out of the match, the cage lights failed to activate, and our opponent delivered an additional hit that tore apart the entire right side of the robot, leaving it far beyond simple repair.
 
 We had only an hour to rebuild before our next match. The repair session quickly became a coordinated rush as I assigned tasks and tried to keep progress steady. Our drill failed midway through, preventing us from installing two critical screws, but we still managed to restore functionality. The rebuilt version wasn’t elegant—one side was missing, and the receiver was secured to the top of the frame with electrical tape—but the drivetrain actually performed better than before.
 
-Unfortunately, just before the next round, we discovered that the signal wire to the weapon motor had been stripped loose during repairs, forcing us to forfeit the match.  </li>
+Unfortunately, just before the next round, we discovered that the signal wire to the weapon motor had been stripped loose during repairs, forcing us to forfeit the match.
+          </p>
         </div>
 
         <div class="card" style="margin-top:18px">
@@ -268,9 +207,69 @@ Unfortunately, just before the next round, we discovered that the signal wire to
             <li>strategy and organization</li>
           </ul>
         </div>
-
       </aside>
+
     </div>
+    <!-- END grid -->
+
+    <!-- Put the remaining sections after the grid so they flow full-width downward -->
+    <section class="card" id="testing" style="margin-top:18px">
+      <div class="section-title"><div class="dot"></div><h2 style="margin:0">Driving Testing & Iteration</h2></div>
+
+      <h3> Version 0</h3>
+      <ul>
+        <li>determining belt material and size</li>
+        <li>initial belt was too thick and to short - caused too much tension between the wheels</li>
+        <li>wheel design began with plastic PLA circles with rubber bands glued on</li>
+        <li>Needed better belt and better wheels</li>
+      </ul>
+
+      <h3> Version 1</h3>
+      <ul>
+        <li> used a smaller polyurethane belt which could be crimped to the proper size</li>
+        <li>substituted rubber bands for TPU sleeves around wheels</li>
+        <li>TPU did not maintain traction sufficiently</li>
+      </ul>
+
+     <h3> Version 2</h3>
+      <ul>
+        <li>added bearings to the front wheels</li>
+        <li>used shore 30 silicon molded wheels to provide better traction</li>
+        <li>molds failed to demold properly</li>
+        <li> wheel speed was too slow</li>
+      </ul>
+
+      <h3> Version 3</h3>
+      <ul>
+        <li> fixed the wheel mold to allow easier demolding</li>
+        <li>upgraded battery from 3s lipo to 4s lipo for better speed</li>
+      </ul>
+    </section>
+
+    <section class="card" id="testing" style="margin-top:18px">
+      <div class="section-title"><div class="dot"></div><h2 style="margin:0">Chassis Testing & Iteration</h2></div>
+
+      <h3> Version 0</h3>
+      <ul>
+        <li>initial design was made of 3 main bodies of PLA (base, front, and back) as well as two PLA sideguards</li>
+        <li>Screws stripped inside the plastic, shape of body left no room for electronics</li>
+        <li>weapon was mounted inside the chassis</li>
+      </ul>
+
+      <h3> Version 1</h3>
+      <ul>
+        <li> Moved weapon forward to leave more space for electronics</li>
+        <li>added heat inserts for screws</li>
+        <li>Chassis shattered easily during impact testing</li>
+      </ul>
+
+     <h3> Version 2</h3>
+      <ul>
+        <li>Changed Chassis design entirely, leaving a gap in the middle and two side compartments to house electronics</li>
+        <li>New design employed PETG for weapon mounts and sideguards, but continued to use PLA for the main chassis</li>
+        <li>Impact testing revealed the chassis as a whole was more flexible and could adequately isolate impacts to reduce damage to the full system</li>
+      </ul>
+    </section>
 
     <footer>
       <p>Back to <a href="index.html" style="color:var(--accent)">Portfolio</a> • © 2025 Kevin Barker</p>
