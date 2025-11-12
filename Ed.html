@@ -72,15 +72,6 @@
       <div>
         <div class="title">Edward the Personal Desk Assistant </div>
        
-      </div>
-      <div style="margin-left:auto;text-align:right">
-        <div style="font-size:0.9rem;color:var(--muted)">Quick Links</div>
-        <nav>
-          <a href="index.html">← Portfolio</a>
-          <a href="#build">Build Details</a>
-          <a href="battlegallery.html">Gallery</a>
-        </nav>
-      </div>
     </header>
 
     <div class="grid">
@@ -99,6 +90,7 @@
             <li>Two blue LEDs serve as the eyes</li>
             <li>A joystick-like gimble mechanism in the center directs all head movement.</li>
             <li>All of the APIs can be run at minimal cost (I have spent less than 20 cents in API costs throughout testing and using Edward).</li>
+            <li>All of the actual components and materials cost roughly $75</li>
           </ul>
         
         </section>
@@ -108,17 +100,17 @@
          
           <ul>
             <p>The original version of Edward, though functional, had a few drawbacks which I plan on addressing with the newer "Archibald." </p>
-            <li>For one, the latency caused by the daisy chain of API keys was relatively high, ranging from 5-10 seconds depending on the length of the prompt and the strength of Wifi signals</li>
+            <li>For one, the latency caused by the daisy chain of API keys was relatively high, ranging from 5-10 seconds depending on the length of the prompt and the strength of the Wifi signal</li>
              <li>Secondly, I had not accounted for the noise, both electrical and mechanical, of the moving servo motors, and how they would interfere with the microphone input. Because of it, Edward will occasionally misunderstand prompts or not hear them altogether. </li>
           </ul>
           <h3>How I am addressing these shortcomings</h3>
           <ul>
             <li>To address the latency issue, I am upgrading the circuitry to be based on a Raspberry Pi 4b, utilizing the newer Realtime API by OpenAI. This API, which gained prominence nearing the end of building Edward, offers speech to speech communication between a person and the OpenAI agent. The latency as I have tested so far, tends to be under a second, even with lower wifi connectivity.</li>
-            <li>For the noise issues I have decided to drop the servos altogether. I am going to be replacing them with an LED cube, which will be able to express colors and emotions through the Realtime API's function calling ability. While the LEDs will still cause a significant amount of electrical noise, I plan on using some sort of shield board between the Raspberry pi and the cube to reduce its interference. </li>
+            <li>For the noise issues I have decided to drop the servos altogether. I am going to be replacing them with an LED cube, which will be able to express colors and emotions through the Realtime API's function calling ability. While the LEDs will still cause a significant amount of electrical noise, I plan on using some sort of shield board between the Raspberry pi and the cube to reduce its interference, or add a noise reducing circuit using a low-pass filtering circuit. </li>
             </ul>
           <h3>Additional Features of the Newer Version</h3>
           <ul>
-            <li>After getting a good view of what did and did not work, there were a few realizations that our team made. One is that we want to make a team named Fred, with two seperate bots registered. Two of our teamates were fascinated by a flamethrower robot and mini robot designs and wanted to build their own to compete along side our main bot at the next competition. The other realization was that our bot will have to be made out of stronger materials, notably UHMW and carbon fiber plates. The overall structure of the bot must also be changed to not be so reliant on a thin aluminum plate.</li>
+            <li>The Realtime API offers function calling by the API, meaning the AI agent can determine whether or not to utilize certain functions I give it depending on the prompt. This allows some pretty unique featers, namely web searching and display functions. I will use the function calling to allow the API to find more specific information using the internet, and certain display functions to make the LED screen more </li>
             <li>As for the main bot that we are going to register, it wil be the same concept as Fred, except instead of a flat front plate it will have two long potruding aluminum forks that act as a ramp, with the weapon mounted in between them. The forks would have TPU on the outer sides of them to help control opponents as well as protect them from being ripped out of the chassis. Additionally, the design will be more centered around an assembly of flat platesrather than the more complex assembly we brought with us in November. This will make the bot more durable and more simple to fix. We will also be utilizing a new cnc machine at our school to switch 3D pinted parts out for carbon fiber and UHMW sheets. Early CAD iterations of this design are already being developed, and a picture is included in the full gallery</li>
           </ul>
         </section>
