@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fred — 3lb Vertical Spinner | Kevin Barker</title>
+  <style>
+    :root{
+      --bg:#808080; --panel:#808080; --accent:#ffa500; --muted:#9aa3a8; --card:#6e6e6e; --line1:rgba(255,127,17,0.28); --line2:rgba(44,62,80,0.26);
+      --radius:10px; --container:900px;
+    }
+    html,body{height:100%;}
+    body{
+      margin:0; font-family: 'Segoe UI', Roboto, -apple-system, system-ui, 'Helvetica Neue', Arial; background:var(--bg); color:#e6e6e6; -webkit-font-smoothing:antialiased;
+    }
+    .bg-wrap{position:fixed; inset:0; z-index:0; pointer-events:none;}
+    .vline{position:absolute; top:0; bottom:0; left:28px; width:6px; background:var(--line1);}
+    .vline.thin{left:62px; width:2px; background:var(--line2);}
+    .vline.small{left:110px; width:3px; background:rgba(255,127,17,0.18);}    
+    .outline-circle{position:absolute; border-radius:50%; border:2px solid rgba(255,127,17,0.18);}    
+
+    .page{position:relative; z-index:2; max-width:var(--container); margin:60px auto; padding:40px 28px;}
+    header{display:flex;align-items:center;gap:18px;margin-bottom:26px}
+    header .title{font-size:1.6rem;font-weight:700;color:var(--accent)}
+    header .meta{color:var(--muted);font-size:0.95rem}
+
+    nav{margin-bottom:18px}
+    nav a{color:var(--muted); text-decoration:none; margin-right:14px}
+    nav a:hover{text-decoration:underline;color:var(--accent)}
+
+    .card{background:var(--card); border-radius:var(--radius); padding:20px; box-shadow:0 6px 20px rgba(0,0,0,0.6); border-left:5px solid rgba(255,127,17,0.18);}
+
+    .grid{display:grid; grid-template-columns: 1fr 320px; gap:20px; align-items:start}
+    .left-col{display:flex; flex-direction:column; gap:18px;}
+    .col-right{padding-left:8px}
+
+    h2{color:#ffa500; margin:6px 0 12px}
+    h3{margin:0 0 8px; color:var(--accent)}
+    p{color:var(--muted); margin:0 0 12px}
+    ul{color:var(--muted); margin:8px 0 12px 18px}
+    li{margin:6px 0}
+
+    .specs{display:flex; flex-direction:column; gap:8px}
+    .spec{display:flex; justify-content:space-between; padding:8px 10px; background:rgba(255,255,255,0.01); border-radius:8px; color:var(--muted)}
+
+    .gallery{display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin-top:12px}
+    .gallery img{width:100%; height:150px; object-fit:cover; border-radius:8px; border:1px solid rgba(255,255,255,0.03)}
+
+    .section-title{display:flex; align-items:center; gap:12px}
+    .section-title .dot{width:10px;height:10px;border-radius:50%;background:var(--accent)}
+
+    .btn{display:inline-block; padding:8px 12px; background:transparent; border:1px solid var(--accent); color:var(--accent); border-radius:8px; text-decoration:none; font-weight:600}
+    .btn:hover{background:rgba(255,127,17,0.06)}
+
+    footer{margin-top:32px; color:var(--muted); font-size:0.9rem}
+
+    @media(max-width:980px){.grid{grid-template-columns:1fr;}.page{margin:30px 16px;padding:24px}}
+  </style>
+</head>
+<body>
+  <div class="bg-wrap">
+    <div class="vline"></div>
+    <div class="vline thin"></div>
+    <div class="vline small"></div>
+    <div class="outline-circle" style="top:40px; left:70px; width:180px; height:180px"></div>
+    <div class="outline-circle" style="top:360px; left:28px; width:260px; height:260px"></div>
+    <div class="outline-circle" style="top:760px; left:100px; width:120px; height:120px"></div>
+  </div>
+
+  <main class="page">
+    <header>
+      <div>
+        <div class="title">Fred — 3 lb Vertical Spinner (NHRL)</div>
+        <div class="meta">Role: Lead Mechanical Engineer & Driver • Year: 2025</div>
+      </div>
+      <div style="margin-left:auto;text-align:right">
+        <div style="font-size:0.9rem;color:var(--muted)">Quick Links</div>
+        <nav>
+          <a href="index.html">← Portfolio</a>
+          <a href="#build">Build Details</a>
+          <a href="battlegallery.html">Gallery</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="grid">
+      <div class="left-col">
+        <section class="card" id="overview">
+          <div class="section-title"><div class="dot"></div><h2 style="margin:0">Overview</h2></div>
+          <p>Fred is a compact competition robot focused on delivering high kinetic energy impacts to the underbellies of opponents. The design emphasizes energy transfer efficiency, affordability, and aggressive strategy. The affordablity aspect of the design called for more 3D printed parts than what is probably healthy for a combat robot, and our bot wasn't able to withstand hits as well as others and is currently being redesigned with more durable materials.</p>
+          <h3>Performance Highlights</h3>
+          <ul>
+            <li>Peak spin speed: ~6,800 RPM (calculated)</li>
+            <li>Approx. 3 lb (weight-legal)</li>
+            <li>Solid 1 lb weapon system delivering ~125 J of kinetic energy (calculated)</li>
+            <li>Almost entirely 3D printed on an Ender 3; total cost about $300–350</li>
+          </ul>
+        </section>
+
+        <section class="card" id="build">
+          <div class="section-title"><div class="dot"></div><h2 style="margin:0">Build Details</h2></div>
+          <h3>Mechanical Design</h3>
+          <ul>
+            <li>Low-profile 3D-printed chassis with impact isolation pockets</li>
+            <li>Aluminum front plate for wedging and control</li>
+            <li>Low center of gravity and high stability</li>
+          </ul>
+          <h3>Weapon & Drive</h3>
+          <ul>
+            <li>Brushless 920 kv motor powering the weapon via belt reduction</li>
+            <li>Custom PETG weapon mounts dispersing impact shock through chassis</li>
+            <li>Belt-driven, back-wheel drive using Gecko v2 DC gearmotors</li>
+            <li>Shore 30 silicone-molded wheels for high traction</li>
+          </ul>
+          <h3>Electronics & Controls</h3>
+          <ul>
+            <li>Radiolink TX/RX with dual ESC setup (Weka 2.0 + generic 20 A brushless)</li>
+            <li>4S LiPo (1500 mAh) powering both systems for more aggressive performance</li>
+           
+          </ul>
+        </section>
+
+        <section class="card" id="weapon-testing">
+          <div class="section-title"><div class="dot"></div><h2 style="margin:0">Weapon Testing & Iteration (Simplified)</h2></div>
+          <h3>Version 0</h3>
+          <ul>
+            <li>Confirmed motor torque and spin-up calculations</li>
+            <li>Belt lacked strength and wore down quickly</li>
+            <li>Frequent belt slippage reduced energy transfer efficiency</li>
+          </ul>
+          <h3>Version 1</h3>
+          <ul>
+            <li>Upgraded to aluminum weapon pulley with greater reduction between motor and weapon pulleys</li>
+            <li>Reached full spin speed consistently</li>
+            <li>Weapon vibration indicated mounting misalignment</li>
+          </ul>
+          <h3>Version 2</h3>
+          <ul>
+            <li>Added more robust bearings and improved the weapon shaft connection to be less wobbly</li>
+            <li>Relocated weapon motor further back in the chassis for improved impact protection</li>
+            <li>Weapon mounts designed to distribute impact through the chassis, rather than absorb the energy themselves</li>
+          </ul>
+        </section>
+
+        <section class="card" id="drive-testing">
+          <div class="section-title"><div class="dot"></div><h2 style="margin:0">Driving Testing & Iteration (Simplified)</h2></div>
+          <h3>Version 0</h3>
+          <ul>
+            <li>Initial belts were too thick and short, creating excess tension and reducing drive speed</li>
+            <li>Prototype wheels used rubber bands glued on PLA, which could not be a final product</li>
+           
+          </ul>
+          <h3>Version 1</h3>
+          <ul>
+            <li>Replaced thick belt with smaller polyurethane belt whish could be cut and joined to the proper length</li>
+            <li>replaced rubber bands with TPU wheel sleeves, but they lacked traction</li>
+          </ul>
+          <h3>Version 2</h3>
+          <ul>
+            <li>Added bearings to front wheels to improve drive speed and efficiency</li>
+            <li>Adopted Shore 30 silicone molds for traction</li>
+            <li>mold was not made properly, causing demolding to be very difficult</li>
+          </ul>
+          <h3>Version 3</h3>
+          <ul>
+            <li>Fixed mold design for easy demolding</li>
+            <li>Upgraded to 4S LiPo for higher drive speed</li>
+          </ul>
+        </section>
+
+        <section class="card" id="chassis-testing">
+          <div class="section-title"><div class="dot"></div><h2 style="margin:0">Chassis Testing & Iteration (Simplified)</h2></div>
+          <h3>Version 0</h3>
+          <ul>
+            <li>initial design was made of 3 main bodies of PLA (base, front, and back) as well as two PLA sideguards</li>
+            <li>Weapon was mounted inside the chassis, leaving very little room for electronics</li>
+            <li>screws easily stripped in the bare PLA plastic</li>
+          </ul>
+          <h3>Version 1</h3>
+          <ul>
+            <li>Moved weapon forward in the chassis to leave more space, added heat inserts</li>
+            <li>PLA still shattered easily during impact</li>
+          </ul>
+          <h3>Version 2</h3>
+          <ul>
+            <li>Redesigned chassis into dual-compartment structure, with the weapon mounted in-between them</li>
+            <li>Mixed PETG/PLA build improved flexibility and impact isolation</li>
+          </ul>
+        </section>
+         <section class="card" id="chassis-testing">
+          <div class="section-title"><div class="dot"></div><h2 style="margin:0">Future Plans</h2></div>
+          <h3>What worked at the competition</h3>
+          <ul>
+            <p> Even though we didn't have much of an opportunity to actually compete and test our bot, given that we only had one match, there were a few parts of our bot which worked well.</p>
+            <li>Firstly, the ground control of our bot (in testing) was exceptional. While most bots face manuverability issues due to the gyroscopic forces of their weapon, Fred remained reliably manuverable. I believe this is due to the wide drivetrain and the fact that the robot always had four wheels on the ground instead of two.</li>
+             <li>Secondly, the weapon system had a very quick spin up time, letting it get up to speed in little time. Additionally, the weapon system did not make a lot of noise, meaning less energy was being lost to vibrations and noise</li>
+          </ul>
+          <h3>What needs improvement</h3>
+          <ul>
+            <li>If you view the full video of our first ever battle, you will notice how Fred's front plate gets split upwards after one hit. It is made out of a cheap and lightweight aluminum sheet, and while the sheet stood up in testing it was not strong enough in application. I couldn't have safely tested its strength against an opposing flywheel, but now I know it was much to thin and not secure.</li>
+            <li>As mentioned, the drivetrain stopped working fully during our first match. While we might have been able to get a good hit or two in, especially in the advantage state we had with our opponent upside down, the drivetrain was not working at full power. It struggled to get under and push our opponent, though in testing it was easily able to push more than three pounds. Admittidly, this was partly due to human error, as I had never been in one of these matches before, but I also think one of the motor axles slipped out of the wheel. In the future a new wheel mounting connector will be implemented to prevent this from happening. </li>
+            <li>The chassis, which was almost entirely 3D printed because of funding, stood up to one or two hits, but crumpled on one side after being hit by a few more. The crumple zones and pockets did technically work, isolating the impacts to one side and leaving the other one essentially untouched, but the plastic pieces could not take much of a beating and will need to be switched out to make a more competetive bot.  </li>
+          </ul>
+          <h3>Future implementations</h3>
+          <ul>
+            <li>After getting a good view of what did and did not work, there were a few realizations that our team made. One is that we want to make a team named Fred, with two seperate bots registered. Two of our teamates were fascinated by a flamethrower robot and mini robot designs and wanted to build their own to compete along side our main bot at the next competition. The other realization was that our bot will have to be made out of stronger materials, notably UHMW and carbon fiber plates. The overall structure of the bot must also be changed to not be so reliant on a thin aluminum plate.</li>
+            <li>As for the main bot that we are going to register, it wil be the same concept as Fred, except instead of a flat front plate it will have two long potruding aluminum forks that act as a ramp, with the weapon mounted in between them. The forks would have TPU on the outer sides of them to help control opponents as well as protect them from being ripped out of the chassis. Additionally, the design will be more centered around an assembly of flat platesrather than the more complex assembly we brought with us in November. This will make the bot more durable and more simple to fix. We will also be utilizing a new cnc machine at our school to switch 3D pinted parts out for carbon fiber and UHMW sheets. Early CAD iterations of this design are already being developed, and a picture is included in the full gallery</li>
+          </ul>
+        </section>
+      
+      </div>
+
+      <aside class="col-right">
+        <div class="card">
+          <h3>Quick Specs</h3>
+          <div class="specs">
+            <div class="spec"><strong>Weight</strong><span>~1.36 kg (3 lb)</span></div>
+            <div class="spec"><strong>Spinner Dia.</strong><span>4.2 in</span></div>
+            <div class="spec"><strong>Weapon Motor</strong><span>Brushless 920 kv</span></div>
+            <div class="spec"><strong>Battery</strong><span>4S LiPo 1500 mAh</span></div>
+            <div class="spec"><strong>Drive Motors</strong><span>Gecko v2 by Just Cuz Robotics</span></div>
+          </div>
+
+          <h3 style="margin-top:14px">Competitions:</h3>
+          <li>Nov 1, 2025</li>
+
+          <h3 style="margin-top:14px">About Competition:</h3>
+          <p style="color:var(--muted); margin:0;">The day before the competition, our team passed safety inspection with no issues. The bot performed exactly as intended, showing excellent ground control, speed, and striking power. This was however, only true until about halfway through our first match, when the drivetrain stopped operating at its full capacity. This, in addition to my comparitively lower driving experieince, eliminated Fred's advantage and made it difficult to maneuver effectively or deliver clean hits. The chassis, which had been designed to isolate single impacts, began to shatter piece by piece under repeated strikes. After we tapped out of the match, the cage lights failed to activate, and our opponent delivered an additional hit that tore apart the entire right side of the robot, leaving it beyond simple repair. We had only an hour to rebuild before our next match. The repair session quickly became a coordinated rush as I assigned tasks and tried to keep progress steady. Our drill failed midway through, preventing us from installing two critical screws, but we still managed to restore functionality. The rebuilt version wasn’t elegant- one side was missing, and the receiver was secured to the top of the frame with electrical tape- but the drivetrain, though slightly misaligned, was actually performing better than it was in the first match. Unfortunately, just before the next round, we discovered that the signal wire to the weapon motor had been stripped loose during repairs, forcing us to forfeit the match. We're coming back stronger than ever in January!</p>
+          <li>See FUTURE PLANS for more information on planned improvements and redesigns</li>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h3>Gallery</h3>
+           <p>View full <a href="battlegallery.html" style="color:var(--accent)">Gallery</a>
+          <div class="gallery">
+            <img src="Untitled design (3).png" alt="Team Logo">
+            <img src="FRED.png" alt="Side Profile">
+            <img src="Screenshot 2025-10-29 185754.png" alt="Internal side">
+            
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h3>Team & Roles</h3>
+          <ul>
+            <li>Mechanical design &amp; CAD</li>
+            <li>Weapon integration &amp; balancing</li>
+            <li>Strategy and organization</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <p>Any additional questions or clarifications, including more detailed descriptions/images of specific parts of the bot can be directed to kbark391@gmail.com | +1(401)-298-5986 </p>
+      <p>Back to <a href="index.html" style="color:var(--accent)">Portfolio</a> •  2025 Kevin Barkers | Robotics Engineering Portfolio</p>
+    </footer>
+  </main>
+</body>
+</html>
