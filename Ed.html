@@ -70,8 +70,8 @@
   <main class="page">
     <header>
       <div>
-        <div class="title">Fred — 3 lb Vertical Spinner (NHRL)</div>
-        <div class="meta">Role: Lead Mechanical Engineer & Driver • Year: 2025</div>
+        <div class="title">Edward the Personal Desk Assistant </div>
+       
       </div>
       <div style="margin-left:auto;text-align:right">
         <div style="font-size:0.9rem;color:var(--muted)">Quick Links</div>
@@ -87,115 +87,36 @@
       <div class="left-col">
         <section class="card" id="overview">
           <div class="section-title"><div class="dot"></div><h2 style="margin:0">Overview</h2></div>
-          <p>Edward is a spherical personal assistant robot using APIs from OpenAI, Deepgram, and Google TTS to transcribe speech, generate a logical answer, and return a humanlike response. Edward utilizes an ESP32 dev board with SD card, micropone, and </p>
+          <p>Edward is a spherical personal assistant robot using APIs from OpenAI, Deepgram, and Google TTS to transcribe speech, generate a logical answer, and return a humanlike response. Edward utilizes an ESP32 dev board with SD card, micropone, and speaker modules on a custom made PCB. Three servos direct the semi-sphere head to tilt forward, sideways, or spin along the tilt axis. </p>
          
         </section>
 
         <section class="card" id="build">
           <div class="section-title"><div class="dot"></div><h2 style="margin:0">Build Details</h2></div>
-          <h3>Mechanical Design</h3>
+         
           <ul>
-            <li>Low-profile 3D-printed chassis with impact isolation pockets</li>
-            <li>Aluminum front plate for wedging and control</li>
-            <li>Low center of gravity and high stability</li>
+            <li>Spherical body for an aestetichally pleasing and friendly looking robot</li>
+            <li>Two blue LEDs serve as the eyes</li>
+            <li>A joystick-like gimble mechanism in the center directs all head movement.</li>
+            <li>All of the APIs can be run at minimal cost (I have spent less than 20 cents in API costs throughout testing and using Edward).</li>
           </ul>
-          <h3>Weapon & Drive</h3>
-          <ul>
-            <li>Brushless 920 kv motor powering the weapon via belt reduction</li>
-            <li>Custom PETG weapon mounts dispersing impact shock through chassis</li>
-            <li>Belt-driven, back-wheel drive using Gecko v2 DC gearmotors</li>
-            <li>Shore 30 silicone-molded wheels for high traction</li>
-          </ul>
-          <h3>Electronics & Controls</h3>
-          <ul>
-            <li>Radiolink TX/RX with dual ESC setup (Weka 2.0 + generic 20 A brushless)</li>
-            <li>4S LiPo (1500 mAh) powering both systems for more aggressive performance</li>
-           
-          </ul>
+        
         </section>
 
-        <section class="card" id="weapon-testing">
-          <div class="section-title"><div class="dot"></div><h2 style="margin:0">Weapon Testing & Iteration (Simplified)</h2></div>
-          <h3>Version 0</h3>
-          <ul>
-            <li>Confirmed motor torque and spin-up calculations</li>
-            <li>Belt lacked strength and wore down quickly</li>
-            <li>Frequent belt slippage reduced energy transfer efficiency</li>
-          </ul>
-          <h3>Version 1</h3>
-          <ul>
-            <li>Upgraded to aluminum weapon pulley with greater reduction between motor and weapon pulleys</li>
-            <li>Reached full spin speed consistently</li>
-            <li>Weapon vibration indicated mounting misalignment</li>
-          </ul>
-          <h3>Version 2</h3>
-          <ul>
-            <li>Added more robust bearings and improved the weapon shaft connection to be less wobbly</li>
-            <li>Relocated weapon motor further back in the chassis for improved impact protection</li>
-            <li>Weapon mounts designed to distribute impact through the chassis, rather than absorb the energy themselves</li>
-          </ul>
-        </section>
-
-        <section class="card" id="drive-testing">
-          <div class="section-title"><div class="dot"></div><h2 style="margin:0">Driving Testing & Iteration (Simplified)</h2></div>
-          <h3>Version 0</h3>
-          <ul>
-            <li>Initial belts were too thick and short, creating excess tension and reducing drive speed</li>
-            <li>Prototype wheels used rubber bands glued on PLA, which could not be a final product</li>
-           
-          </ul>
-          <h3>Version 1</h3>
-          <ul>
-            <li>Replaced thick belt with smaller polyurethane belt whish could be cut and joined to the proper length</li>
-            <li>replaced rubber bands with TPU wheel sleeves, but they lacked traction</li>
-          </ul>
-          <h3>Version 2</h3>
-          <ul>
-            <li>Added bearings to front wheels to improve drive speed and efficiency</li>
-            <li>Adopted Shore 30 silicone molds for traction</li>
-            <li>mold was not made properly, causing demolding to be very difficult</li>
-          </ul>
-          <h3>Version 3</h3>
-          <ul>
-            <li>Fixed mold design for easy demolding</li>
-            <li>Upgraded to 4S LiPo for higher drive speed</li>
-          </ul>
-        </section>
-
-        <section class="card" id="chassis-testing">
-          <div class="section-title"><div class="dot"></div><h2 style="margin:0">Chassis Testing & Iteration (Simplified)</h2></div>
-          <h3>Version 0</h3>
-          <ul>
-            <li>initial design was made of 3 main bodies of PLA (base, front, and back) as well as two PLA sideguards</li>
-            <li>Weapon was mounted inside the chassis, leaving very little room for electronics</li>
-            <li>screws easily stripped in the bare PLA plastic</li>
-          </ul>
-          <h3>Version 1</h3>
-          <ul>
-            <li>Moved weapon forward in the chassis to leave more space, added heat inserts</li>
-            <li>PLA still shattered easily during impact</li>
-          </ul>
-          <h3>Version 2</h3>
-          <ul>
-            <li>Redesigned chassis into dual-compartment structure, with the weapon mounted in-between them</li>
-            <li>Mixed PETG/PLA build improved flexibility and impact isolation</li>
-          </ul>
-        </section>
          <section class="card" id="chassis-testing">
-          <div class="section-title"><div class="dot"></div><h2 style="margin:0">Future Plans</h2></div>
-          <h3>What worked at the competition</h3>
+          <div class="section-title"><div class="dot"></div><h2 style="margin:0">Future Implementation</h2></div>
+         
           <ul>
-            <p> Even though we didn't have much of an opportunity to actually compete and test our bot, given that we only had one match, there were a few parts of our bot which worked well.</p>
-            <li>Firstly, the ground control of our bot (in testing) was exceptional. While most bots face manuverability issues due to the gyroscopic forces of their weapon, Fred remained reliably manuverable. I believe this is due to the wide drivetrain and the fact that the robot always had four wheels on the ground instead of two.</li>
-             <li>Secondly, the weapon system had a very quick spin up time, letting it get up to speed in little time. Additionally, the weapon system did not make a lot of noise, meaning less energy was being lost to vibrations and noise</li>
+            <p>The original version of Edward, though functional, had a few drawbacks which I plan on addressing with the newer "Archibald." </p>
+            <li>For one, the latency caused by the daisy chain of API keys was relatively high, ranging from 5-10 seconds depending on the length of the prompt and the strength of Wifi signals</li>
+             <li>Secondly, I had not accounted for the noise, both electrical and mechanical, of the moving servo motors, and how they would interfere with the microphone input. Because of it, Edward will occasionally misunderstand prompts or not hear them altogether. </li>
           </ul>
-          <h3>What needs improvement</h3>
+          <h3>How I am addressing these shortcomings</h3>
           <ul>
-            <li>If you view the full video of our first ever battle, you will notice how Fred's front plate gets split upwards after one hit. It is made out of a cheap and lightweight aluminum sheet, and while the sheet stood up in testing it was not strong enough in application. I couldn't have safely tested its strength against an opposing flywheel, but now I know it was much to thin and not secure.</li>
-            <li>As mentioned, the drivetrain stopped working fully during our first match. While we might have been able to get a good hit or two in, especially in the advantage state we had with our opponent upside down, the drivetrain was not working at full power. It struggled to get under and push our opponent, though in testing it was easily able to push more than three pounds. Admittidly, this was partly due to human error, as I had never been in one of these matches before, but I also think one of the motor axles slipped out of the wheel. In the future a new wheel mounting connector will be implemented to prevent this from happening. </li>
-            <li>The chassis, which was almost entirely 3D printed because of funding, stood up to one or two hits, but crumpled on one side after being hit by a few more. The crumple zones and pockets did technically work, isolating the impacts to one side and leaving the other one essentially untouched, but the plastic pieces could not take much of a beating and will need to be switched out to make a more competetive bot.  </li>
-          </ul>
-          <h3>Future implementations</h3>
+            <li>To address the latency issue, I am upgrading the circuitry to be based on a Raspberry Pi 4b, utilizing the newer Realtime API by OpenAI. This API, which gained prominence nearing the end of building Edward, offers speech to speech communication between a person and the OpenAI agent. The latency as I have tested so far, tends to be under a second, even with lower wifi connectivity.</li>
+            <li>For the noise issues I have decided to drop the servos altogether. I am going to be replacing them with an LED cube, which will be able to express colors and emotions through the Realtime API's function calling ability. While the LEDs will still cause a significant amount of electrical noise, I plan on using some sort of shield board between the Raspberry pi and the cube to reduce its interference. </li>
+            </ul>
+          <h3>Additional Features of the Newer Version</h3>
           <ul>
             <li>After getting a good view of what did and did not work, there were a few realizations that our team made. One is that we want to make a team named Fred, with two seperate bots registered. Two of our teamates were fascinated by a flamethrower robot and mini robot designs and wanted to build their own to compete along side our main bot at the next competition. The other realization was that our bot will have to be made out of stronger materials, notably UHMW and carbon fiber plates. The overall structure of the bot must also be changed to not be so reliant on a thin aluminum plate.</li>
             <li>As for the main bot that we are going to register, it wil be the same concept as Fred, except instead of a flat front plate it will have two long potruding aluminum forks that act as a ramp, with the weapon mounted in between them. The forks would have TPU on the outer sides of them to help control opponents as well as protect them from being ripped out of the chassis. Additionally, the design will be more centered around an assembly of flat platesrather than the more complex assembly we brought with us in November. This will make the bot more durable and more simple to fix. We will also be utilizing a new cnc machine at our school to switch 3D pinted parts out for carbon fiber and UHMW sheets. Early CAD iterations of this design are already being developed, and a picture is included in the full gallery</li>
