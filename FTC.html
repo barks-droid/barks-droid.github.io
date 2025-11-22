@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Gallery | FRED Battlebot</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #808080;
+      color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 0;
+      border-bottom: 2px solid #ffa500;
+    }
+
+    header h1 {
+      margin: 0;
+      color: #ffa500;
+    }
+
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .gallery-item {
+      background-color: #2c2c2c;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.02);
+    }
+
+    .gallery-item img, .gallery-item video {
+      width: 100%;
+      display: block;
+    }
+
+    .caption {
+      padding: 1rem;
+      background-color: #1e1e1e;
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    .caption h3 {
+      margin: 0 0 0.5rem;
+      color: #ffa500;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: #bbb;
+      border-top: 2px solid #ffa500;
+      margin-top: 2rem;
+    }
+
+    a.back {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #ffa500;
+      text-decoration: none;
+      font-weight: bold;
+      border: 1px solid #ffa500;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+
+    a.back:hover {
+      background-color: #ffa500;
+      color: #1e1e1e;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>FRED Battlebot – Gallery</h1>
+    <a href="battlebot.html" class="back">← Back to Project Page</a>
+  </header>
+
+  <div class="gallery-container">
+    <!-- Example Image -->
+    <div class="gallery-item">
+      <img src="ALL_PARTS.png" alt="Building FRED">
+      <div class="caption">
+        <h3>All Parts of the Assembly</h3>
+        <p>A layout of all of the components that make up Fred.</p>
+      </div>
+    </div>
+
+    <!-- Example Video -->
+    <div class="gallery-item">
+      <video controls>
+        <source src="BZ-nhrl_nov25_3lb-dimachaerus-fred-4b62-Cage-6-Blue.mp4" type="video/mp4">
+        
+      </video>
+      <div class="caption">
+        <h3>First ever fight, against dimachaerus</h3>
+        <p>This was the first ever fight tht Fred fought in. You can see the moment our bot struggles to get under dimachaerus, because our drivetrain functionality had decreased. In the fight, the front plate gets torn off, rendering our bot essentially useless. Before our opponent lined up for the final shot, we tapped out but he still went through with the hit, as the cage lights did not go red. The design of the bot is being modified to prevent such instantaneuos damage and incapacitation as we faced in our only match.</p>
+      </div>
+    </div>
+
+    <!-- Add more gallery items below -->
+     <div class="gallery-item">
+      <img src="FIRST_TIME.png" alt="Building FRED">
+      <div class="caption">
+        <h3>First assembly</h3>
+        <p>The first time the competing version of the bot was fully assembled</p>
+      </div>
+    </div>
+      <div class="gallery-item">
+      <img src="FRED.png" alt="Building FRED">
+      <div class="caption">
+        <h3>Side profile</h3>
+        <p>Side profile of the bot which competed in Nov.</p>
+      </div>
+    </div>
+     <div class="gallery-item">
+      <img src="Untitled design (3).png" alt="FRED">
+      <div class="caption">
+        <h3>Team Logo</h3>
+       
+      </div>
+    </div>
+ 
+    <div class="gallery-item">
+      <img src="Screenshot 2025-10-29 185754.png" alt="Building FRED">
+      <div class="caption">
+        <h3>Inner side profile</h3>
+        <p>Shows the inside of the left side of Fred, revealing the weapon mounts and chassis structure</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="PENETRATOR.png" alt="Building FRED">
+      <div class="caption">
+        <h3>New chassis Concept</h3>
+        <p>Designed with ten TPU forks on the front to act a little more as a control bot, while having two long aluminum forks which will replace the thin front plate in the old design. The new model will also be using a G10 baseplate and top plate, and UHMW side panels. The wheels will also be more cleet-like for even better traction in the soft wood at NHRL.</p>
+      </div>
+    </div>
+     <div class="gallery-item">
+      <img src="battlebot_2025-Jan-29_03-30-16AM-000_CustomizedView16084407626.jpg" alt="Building FRED">
+      <div class="caption">
+        <h3>Original Concept</h3>
+        <p>Features a pretty compact main chassis, where the weapon was mounted inside. This was redesigned into the version which competed in November, taking the spinner outside of the chassis and lowering the design to the ground</p>
+      </div>
+    </div>
+     <div class="gallery-item">
+      <video controls>
+        <source src="PXL_20251009_220559022~3.mp4" type="video/mp4">
+        
+      </video>
+      <div class="caption">
+        <h3>Low Power Functionality Test</h3>
+        <p>This is a brief clip from part of the functionality testing for Fred. Through testing I found that lower power on the weapon led to more of a flipping type of hit, while higher speeds led to a more saw-like cutting hit. In this example the forks and front plate work excellent against the stationary ~2.5 lb piece of wood which it was tested against, flipping it into the air and removing a chunk.</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="Side by Side.png" alt="Building FRED">
+      <div class="caption">
+        <h3>Our Side by Side Picture Between Fred and dimachaerus</h3>
+        <p>Our bot looks way less refined in comparison to the bot which had competed seven times before. I sometimes wonder if we would have stood more of a chance against another less experienced bot. We were thrown to the wolves in our first fight, and our more rudementary design and driving made it much harder to compete. For the newer design I am working on refining Fred's geometry and strategy to stand more of a chance</p>
+      </div>
+    </div>
+    
+  </div>
+
+  <footer>
+    <p>Any additional questions or clarifications, including more detailed descriptions/images of specific parts of the bot can be directed to kbark391@gmail.com | +1(401)-298-5986 </p>
+    <p> 2025 Kevin Barker | Robotics Engineering Portfolio</p>
+    
+    
+  </footer>
+
+</body>
+</html>
