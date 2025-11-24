@@ -99,14 +99,14 @@
           <div class="section-title"><div class="dot"></div><h2 style="margin:0">Future Implementation</h2></div>
          
           <ul>
-            <p>The original version of Edward, though functional, had a few drawbacks which I plan on addressing with the newer "Archibald." </p>
+            <p>The original version of Edward had a few drawbacks which I plan on addressing with the newer "Archibald." </p>
             <li>For one, the latency caused by the daisy chain of API keys was relatively high, ranging from 5-10 seconds depending on the length of the prompt and the strength of the Wifi signal</li>
              <li>Secondly, I had not accounted for the noise, both electrical and mechanical, of the moving servo motors, and how they would interfere with the microphone input. Because of it, Edward will occasionally misunderstand prompts or not hear them altogether. </li>
           </ul>
           <h3>How I am addressing these shortcomings</h3>
           <ul>
-            <li>To address the latency issue, I am upgrading the circuitry to be based on a Raspberry Pi 4b, utilizing the newer Realtime API by OpenAI. This API, which gained prominence nearing the end of building Edward, offers speech to speech communication between a person and the OpenAI agent. The latency as I have tested so far, tends to be under a second, even with lower wifi connectivity.</li>
-            <li>For the noise issues I have decided to drop the servos altogether. I am going to be replacing them with an LED cube, which will be able to express colors and emotions through the Realtime API's function calling ability. While the LEDs will still cause a significant amount of electrical noise, I plan on using some sort of shield board between the Raspberry pi and the cube to reduce its interference, or add a noise reducing circuit using a low-pass filtering circuit. </li>
+            <li>To address the latency issue, I am upgrading the circuitry to be based on a Raspberry Pi 4b, utilizing the newer Realtime API by OpenAI. This API, which gained prominence nearing the end of my building of Edward, offers speech to speech communication between a person and the OpenAI agent. The latency as I have tested so far, tends to be under a second, even with lower wifi connectivity.</li>
+            <li>For the noise issues I have decided to drop the servos altogether. I am going to be replacing them with an LED cube, which will be able to express colors and emotions through the Realtime API's function calling ability. While the LEDs will still cause a significant amount of electrical noise, I plan on using some sort of shield board between the Raspberry pi and the cube to reduce its interference, or add a noise reducing circuit using a low-pass filtering circuit.</li>
             </ul>
           <h3>Additional Features of the Newer Version</h3>
           <ul>
