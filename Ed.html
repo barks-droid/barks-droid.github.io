@@ -1,142 +1,159 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Edward the Personal Desk Assistant | Kevin Barker</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Gallery | FTC Designs</title>
   <style>
-    :root{
-      --bg:#808080; --panel:#808080; --accent:#ffa500; --muted:#9aa3a8; --card:#6e6e6e; --line1:rgba(255,127,17,0.28); --line2:rgba(44,62,80,0.26);
-      --radius:10px; --container:900px;
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #808080;
+      color: #f4f4f4;
+      margin: 0;
+      padding: 0;
     }
-    html,body{height:100%;}
-    body{
-      margin:0; font-family: 'Segoe UI', Roboto, -apple-system, system-ui, 'Helvetica Neue', Arial; background:var(--bg); color:#e6e6e6; -webkit-font-smoothing:antialiased;
+
+    header {
+      text-align: center;
+      padding: 2rem 0;
+      border-bottom: 2px solid #ffa500;
     }
-    .bg-wrap{position:fixed; inset:0; z-index:0; pointer-events:none;}
-    .vline{position:absolute; top:0; bottom:0; left:28px; width:6px; background:var(--line1);}
-    .vline.thin{left:62px; width:2px; background:var(--line2);}
-    .vline.small{left:110px; width:3px; background:rgba(255,127,17,0.18);}    
-    .outline-circle{position:absolute; border-radius:50%; border:2px solid rgba(255,127,17,0.18);}    
 
-    .page{position:relative; z-index:2; max-width:var(--container); margin:60px auto; padding:40px 28px;}
-    header{display:flex;align-items:center;gap:18px;margin-bottom:26px}
-    header .title{font-size:1.6rem;font-weight:700;color:var(--accent)}
-    header .meta{color:var(--muted);font-size:0.95rem}
+    header h1 {
+      margin: 0;
+      color: #ffa500;
+    }
 
-    nav{margin-bottom:18px}
-    nav a{color:var(--muted); text-decoration:none; margin-right:14px}
-    nav a:hover{text-decoration:underline;color:var(--accent)}
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-    .card{background:var(--card); border-radius:var(--radius); padding:20px; box-shadow:0 6px 20px rgba(0,0,0,0.6); border-left:5px solid rgba(255,127,17,0.18);}
+    .gallery-item {
+      background-color: #2c2c2c;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease;
+    }
 
-    .grid{display:grid; grid-template-columns: 1fr 320px; gap:20px; align-items:start}
-    .left-col{display:flex; flex-direction:column; gap:18px;}
-    .col-right{padding-left:8px}
+    .gallery-item:hover {
+      transform: scale(1.02);
+    }
 
-    h2{color:#ffa500; margin:6px 0 12px}
-    h3{margin:0 0 8px; color:var(--accent)}
-    p{color:var(--muted); margin:0 0 12px}
-    ul{color:var(--muted); margin:8px 0 12px 18px}
-    li{margin:6px 0}
+    .gallery-item img, .gallery-item video {
+      width: 100%;
+      display: block;
+    }
 
-    .specs{display:flex; flex-direction:column; gap:8px}
-    .spec{display:flex; justify-content:space-between; padding:8px 10px; background:rgba(255,255,255,0.01); border-radius:8px; color:var(--muted)}
+    .caption {
+      padding: 1rem;
+      background-color: #1e1e1e;
+      color: #ccc;
+      font-size: 0.95rem;
+    }
 
-    .gallery{display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin-top:12px}
-    .gallery img{width:100%; height:150px; object-fit:cover; border-radius:8px; border:1px solid rgba(255,255,255,0.03)}
+    .caption h3 {
+      margin: 0 0 0.5rem;
+      color: #ffa500;
+      font-size: 1.1rem;
+    }
 
-    .section-title{display:flex; align-items:center; gap:12px}
-    .section-title .dot{width:10px;height:10px;border-radius:50%;background:var(--accent)}
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: #bbb;
+      border-top: 2px solid #ffa500;
+      margin-top: 2rem;
+    }
 
-    .btn{display:inline-block; padding:8px 12px; background:transparent; border:1px solid var(--accent); color:var(--accent); border-radius:8px; text-decoration:none; font-weight:600}
-    .btn:hover{background:rgba(255,127,17,0.06)}
+    a.back {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #ffa500;
+      text-decoration: none;
+      font-weight: bold;
+      border: 1px solid #ffa500;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
 
-    footer{margin-top:32px; color:var(--muted); font-size:0.9rem}
-
-    @media(max-width:980px){.grid{grid-template-columns:1fr;}.page{margin:30px 16px;padding:24px}}
+    a.back:hover {
+      background-color: #ffa500;
+      color: #1e1e1e;
+    }
   </style>
 </head>
 <body>
-  <div class="bg-wrap">
-    <div class="vline"></div>
-    <div class="vline thin"></div>
-    <div class="vline small"></div>
-    <div class="outline-circle" style="top:40px; left:70px; width:180px; height:180px"></div>
-    <div class="outline-circle" style="top:360px; left:28px; width:260px; height:260px"></div>
-    <div class="outline-circle" style="top:760px; left:100px; width:120px; height:120px"></div>
-  </div>
 
-  <main class="page">
-    <header>
-      <div>
-        <div class="title">Edward the Personal Desk Assistant </div>
-       
-    </header>
+  <header>
+    <h1>FTC – Gallery</h1>
+    <a href="index.html" class="back">← Back to Project Page</a>
+  </header>
 
-    <div class="grid">
-      <div class="left-col">
-        <section class="card" id="overview">
-          <div class="section-title"><div class="dot"></div><h2 style="margin:0">Overview</h2></div>
-          <p>Edward is a spherical personal assistant robot using APIs from OpenAI, Deepgram, and Google TTS to transcribe speech, generate a logical answer, and return a humanlike response. Edward utilizes an ESP32-WROOM board with SD card, micropone, and speaker modules on a custom made PCB. Three servos direct the semi-sphere head to tilt forward, sideways, or spin along the tilt axis to convey emotions. </p>
-         
-        </section>
-
-        <section class="card" id="build">
-          <div class="section-title"><div class="dot"></div><h2 style="margin:0">Build Details</h2></div>
-         
-          <ul>
-            <li>Spherical body for a friendly looking robot</li>
-            <li>Two blue LEDs serve as eyes</li>
-            <li>A joystick inspired mechanism that directs all head movement.</li>
-            <li>All of the APIs can be run at minimal cost (I have spent less than 20 cents in API costs throughout testing and using Edward).</li>
-            <li>All of the actual components and materials cost roughly $75</li>
-          </ul>
-        
-        </section>
-
-         <section class="card" id="chassis-testing">
-          <div class="section-title"><div class="dot"></div><h2 style="margin:0">Future Implementation</h2></div>
-         
-          <ul>
-            <p>The original version of Edward had a few drawbacks which I plan on addressing with the newer "Archibald." </p>
-            <li>For one, the latency caused by the daisy chain of API keys was relatively high, ranging from 5-10 seconds depending on the length of the prompt and the strength of the Wifi signal</li>
-             <li>Secondly, I had not accounted for the noise, both electrical and mechanical, of the moving servo motors, and how they would interfere with the microphone input. Because of it, Edward will occasionally misunderstand prompts or not hear them altogether. </li>
-          </ul>
-          <h3>How I am addressing these shortcomings</h3>
-          <ul>
-            <li>To address the latency issue, I am upgrading the circuitry to be based on a Raspberry Pi 4b, utilizing the newer Realtime API by OpenAI. This API, which gained prominence nearing the end of my building of Edward, offers speech to speech communication between a person and the OpenAI agent. The latency as I have tested so far, tends to be under a second, even with lower wifi connectivity.</li>
-            <li>For the noise issues I have decided to drop the servos altogether. I am going to be replacing them with an LED cube, which will be able to express colors and emotions through the Realtime API's function calling ability. While the LEDs will still cause a significant amount of electrical noise, I plan on using some sort of shield board between the Raspberry pi and the cube to reduce its interference, or add a noise reducing circuit using a low-pass filtering circuit.</li>
-            </ul>
-          <h3>Additional Features of the Newer Version</h3>
-          <ul>
-            <li>The Realtime API offers function calling by the API, meaning the AI agent can determine whether or not to utilize certain functions I give it depending on the prompt. This allows some pretty unique featers, namely web searching and display functions. I will use the function calling to allow the API to find more specific information using the internet, and certain display functions to make the LED screen more </li>
-            <li>As for the main bot that we are going to register, it wil be the same concept as Fred, except instead of a flat front plate it will have two long potruding aluminum forks that act as a ramp, with the weapon mounted in between them. The forks would have TPU on the outer sides of them to help control opponents as well as protect them from being ripped out of the chassis. Additionally, the design will be more centered around an assembly of flat platesrather than the more complex assembly we brought with us in November. This will make the bot more durable and more simple to fix. We will also be utilizing a new cnc machine at our school to switch 3D pinted parts out for carbon fiber and UHMW sheets. Early CAD iterations of this design are already being developed, and a picture is included in the full gallery</li>
-          </ul>
-        </section>
-      
+  <div class="gallery-container">
+    <!-- Example Image -->
+    <div class="gallery-item">
+      <img src="bucket.png" alt="Building FRED">
+      <div class="caption">
+        <h3>Intake system for 2024-2025 game "Into the Deep"</h3>
+        <p>Our team decided on using an active intake system to pick up "samples" (3x1.5x1.5 rectangular prisms) from the center of the field quickly and efficiently. The design, which we implemented at the qualifiers, features TPU bootkicker wheels to intake the samples into the bucket, and an outer attachment to position the sample in the correct orientation for the outtake system passively when it was tilted backwards.</p>
       </div>
-
-      <aside class="col-right">
-        <div class="card" style="margin-top:18px">
-          <h3>Gallery</h3>
-           <p>View full <a href="battlegallery.html" style="color:var(--accent)">Gallery</a>
-          <div class="gallery">
-            <img src="Untitled design (3).png" alt="Team Logo">
-            <img src="FRED.png" alt="Side Profile">
-            <img src="Screenshot 2025-10-29 185754.png" alt="Internal side">
-            
-          </div>
-        </div>
-
-        
-      </aside>
     </div>
 
-    <footer>
-      <p>Any additional questions or clarifications, including more detailed descriptions/images of specific parts of the bot can be directed to kbark391@gmail.com | +1(401)-298-5986 </p>
-      <p>Back to <a href="index.html" style="color:var(--accent)">Portfolio</a> •  2025 Kevin Barker | Robotics Engineering Portfolio</p>
-    </footer>
-  </main>
+    <!-- Example Video -->
+
+
+    <!-- Add more gallery items below -->
+     <div class="gallery-item">
+      <img src="sticks.png" alt="Building FRED">
+      <div class="caption">
+        <h3>Outtake claw for our first design (2024-25)</h3>
+        <p>The claws were designed to be very long (they were nicknamed the "chopsticks") so that our bot could either transition samples from the intake system into the baskets (high containers which samples could be placed in for points) or reach over the front of the bot to pick up "specimens" (samples with a clip attached to them that were worth more points) from the human player easily</p>
+      </div>
+    </div>
+
+        <div class="gallery-item">
+      <div class="caption">
+        <a href="https://photos.google.com/share/AF1QipMbQrKJzhPVOsysmlnWFsOrj8jQeBl6r1PDnhnWViLUDIVzYySNuDfCd7YZBlCLKw?key=dmpXTjE1Rk5lRXNJb0cyZTAyN25nb1luWWxPM2pn" class="back">← competition videos</a>
+        <h3>Match showcasing our basket scoring ability (video 1)</h3>
+        <p>In this match, our teammate was only able to score specimens, while we were able to do either. Because of this, we ran our specimen autonomous at the start, then transitioned over to scoring in the baskets. We had not coded in specific positions for the outtake claw and intake bucket to line up, so it required manual input which lowered its efficiency. It still functioned relatively well in the competition.</p>
+  
+        <h3>Match showcasing our specimen scoring ability (video 2)</h3>
+        <p>In this match, our teammate was only able to score samples in the baskets, so we took over the specimen scoring. Our robot was more optimized for specimen scoring, and this match showed how we were able to score multiple specimens.</p>
+   
+        <h3>State meet failure (video 3)</h3>
+        <p>After seeing great success in the qualifying match, we attempted to redesign and rebuild the entire robot within the month we had between competitions. We may have been able to do this, but there was some division amongst the team on how we should redesign and which directions we should focus on, leading to differing concepts and a rushed bot. In the end, we used two simple claws for the intake and out-take, as well as a large rotating arm attached to the front linear slide to reach into the center "submersible". The out-take claw was attached to two linear slides which we connected, though it was hard to get them synced properly. Because of the rushed design, we had issues with our intake system and, more severely, with the vertical linear slides, as one kept getting jammed. This to me was a good lesson about what successful leadership should involve, and revealed some of the consequences that come with impulsive redesigns</p>
+      </div>
+    </div>
+          
+    <div class="gallery-item">
+      <img src="Launch.png" alt="Building FRED">
+      <div class="caption">
+        <h3>Launcher prototype 2025-26</h3>
+        <p>This year, the game is focused on shooting colored balls ("artifacts") into a basket. This launcher is the outtake system for our robot, and features a long back ramp formed around a 72mm Gecko Wheel from Gobilda (not visible in file) as well as a hooded top which can be used to change the launch angles. Through testing we realized that the launch wheels slowed considerably between balls, and in order to maximize the speed at which we could score we needed to increase the rotational momentum of the system. We did this by adding about 600 grams of weight to the axle, increasing the moment of inertia and allowing us to fire three balls consecutively with minimal loss in speed. We are excited to see how this concept works at the qualifier on December 13th.</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="caption">
+         <h3>Qualifyer Dec 13th</h3>
+        <p>Unfortunately, due to the tragedy which occurred at Brown University on the day of the competition across the street from the qualifier, the livestreams were taken down and the competition left unfinished. Our bot, which we had gone in with the expectation we were going to be a mid-ladder team, was ranked as the first seed for the majority of the competition, until our teamates recieved a major foul in our last match, pushing us down to sixth before the playoffs.  Our bot's cycle time was much faster than our opponents, and we were able to score reliably and consistently throughout the tele-op period. We are going to optimize our speed based system by adding a turret which will auto-lock on the goal so we do not have to manually aim. </p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Any additional questions or clarifications, including more detailed descriptions/images of specific parts of the bot can be directed to kbark391@gmail.com | +1(401)-298-5986 </p>
+    <p> 2025 Kevin Barker | Robotics Engineering Portfolio</p>
+    
+    
+  </footer>
+
 </body>
 </html>
