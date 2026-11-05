@@ -18,7 +18,7 @@
     --accent-text: #b44a0e; /* darker orange, readable as text */
     --ink: #23272c;
     --muted: #5b626a;
-    --band: #e2e5e8;        /* backdrop behind the logo */
+    --band: #ffffff;        /* logo background color: match your logo file */
     --line: #bfc5cb;
     color-scheme: light;
   }
@@ -38,8 +38,8 @@
   /* Hero: the logo is the title */
   header { padding: 3rem 0 2rem; }
   .band {
-    background: var(--band);
-    border-bottom: 4px solid var(--accent);
+    /* White center matches the logo's background, then fades into the page grey */
+    background: radial-gradient(ellipse closest-side, var(--band) 55%, var(--bg) 100%);
     padding: clamp(1.5rem, 5vw, 3rem) 1.25rem;
     display: grid; place-items: center;
   }
@@ -50,7 +50,7 @@
   .logo.missing::before {
     content: "Add " attr(data-file);
     position: absolute; inset: 0; display: grid; place-items: center;
-    color: #c3c8ce; font-size: .95rem;
+    color: var(--muted); font-size: .95rem;
   }
   .visually-hidden {
     position: absolute; width: 1px; height: 1px; overflow: hidden;
