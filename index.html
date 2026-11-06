@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kestrel — 3 lb combat robot by Kevin Barker</title>
 <meta name="description" content="Build log for Kestrel, a 3 lb beetleweight combat robot designed for the National Havoc Robotics League.">
-<link rel="icon" href="images/logo.png">
+<link rel="icon" href="Kestrel I.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
@@ -38,13 +38,14 @@
   /* Hero: the logo is the title */
   header { padding: 3rem 0 2rem; }
   .band {
-    /* White center matches the logo's background, then fades into the page grey */
-    background: radial-gradient(ellipse closest-side, var(--band) 55%, var(--bg) 100%);
-    padding: clamp(1.5rem, 5vw, 3rem) 1.25rem;
+    /* White center matches the logo's background, then fades into the page grey.
+       Taller padding + a wider white center keep the logo's corners inside the solid white. */
+    background: radial-gradient(ellipse closest-side, var(--band) 66%, var(--bg) 100%);
+    padding: clamp(3rem, 8vw, 5.5rem) 1.25rem;
     display: grid; place-items: center;
   }
   .logo { position: relative; width: 100%; max-width: 40rem; }
-  .logo img { width: 100%; height: auto; max-height: 14rem; object-fit: contain; margin: 0 auto; }
+  .logo img { width: 100%; height: auto; max-height: clamp(5rem, 22vw, 9rem); object-fit: contain; margin: 0 auto; }
   .logo.missing { aspect-ratio: 3 / 1; border: 1px dashed #8a9199; }
   .logo.missing img { display: none; }
   .logo.missing::before {
@@ -63,21 +64,24 @@
   }
   .specs strong { color: var(--ink); font-weight: 600; }
 
-  .hero-shot { margin: 2rem 0 0; }
-
   section { padding: 3rem 0; border-top: 1px solid var(--line); }
   h2 {
     margin: 0 0 1.25rem;
     font-size: 1.75rem; font-weight: 700; font-stretch: 112%;
   }
 
-  /* Image slots: show a clear prompt until the real file exists */
+  /* Image frames: clean border, rounded corners, soft shadow */
   .slot {
     position: relative; margin: 0;
-    background: var(--panel); border: 1px dashed var(--line);
+    background: var(--panel);
     aspect-ratio: 16 / 10; overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    box-shadow: 0 1px 2px rgba(20, 24, 28, .08), 0 8px 24px rgba(20, 24, 28, .12);
   }
   .slot img { width: 100%; height: 100%; object-fit: cover; }
+  /* Dashed prompt only while a slot is empty */
+  .slot.missing { border-style: dashed; box-shadow: none; }
   .slot.missing img { display: none; }
   .slot.missing::before {
     content: "Add " attr(data-file);
@@ -87,8 +91,12 @@
   .slot button {
     all: unset; cursor: zoom-in; display: block; width: 100%; height: 100%;
   }
+  /* Space around the main render (placed after .slot so it isn't overridden) */
+  .slot.hero-shot { margin: 2.75rem 0 1.5rem; }
   figcaption { color: var(--muted); font-size: .95rem; margin-top: .5rem; }
 
+  /* Browsers give <figure> ~40px side margins by default; remove them so thumbnails fill their columns */
+  .gallery figure { margin: 0; }
   .gallery {
     display: grid; gap: 1.5rem;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr));
@@ -147,7 +155,7 @@
     <li><strong>Designed in</strong> Fusion 360</li>
     <li><strong>Builder</strong> Kevin Barker, EE at Northeastern</li>
   </ul>
-  <figure class="slot hero-shot" data-file="Kestrel.gif">
+  <figure class="slot hero-shot" data-file="KESTREL_2026-Nov-06_08-24-41PM-000_CustomizedView2404332892_png.png">
     <button type="button" aria-label="Enlarge main render"><img src="KESTREL_2026-Nov-06_08-24-41PM-000_CustomizedView2404332892_png.png" alt="Full render of Kestrel in Fusion 360"></button>
   </figure>
 </header>
@@ -175,15 +183,15 @@
     <h2>Renders and photos</h2>
     <div class="gallery">
       <figure>
-        <div class="slot" data-file="images/render-1.png"><button type="button" aria-label="Enlarge"><img src="Screenshot 2026-11-06 152329.png" alt="Kestrel render, front view"></button></div>
+        <div class="slot" data-file="Screenshot 2026-11-06 152329.png"><button type="button" aria-label="Enlarge front view"><img src="Screenshot 2026-11-06 152329.png" alt="Kestrel render, front view"></button></div>
         <figcaption>Front View</figcaption>
       </figure>
       <figure>
-        <div class="slot" data-file="images/render-2.png"><button type="button" aria-label="Enlarge"><img src="Screenshot 2026-11-06 152237.png" alt="Kestrel render, internals"></button></div>
+        <div class="slot" data-file="Screenshot 2026-11-06 152237.png"><button type="button" aria-label="Enlarge side view"><img src="Screenshot 2026-11-06 152237.png" alt="Kestrel render, side view"></button></div>
         <figcaption>Side View</figcaption>
       </figure>
       <figure>
-        <div class="slot" data-file="images/pla-prototype.png"><button type="button" aria-label="Enlarge"><img src="Screenshot 2026-11-06 152310.png" alt="Full-scale PLA prototype of Kestrel"></button></div>
+        <div class="slot" data-file="Screenshot 2026-11-06 152310.png"><button type="button" aria-label="Enlarge top view"><img src="Screenshot 2026-11-06 152310.png" alt="Kestrel render, top view"></button></div>
         <figcaption>Top View</figcaption>
       </figure>
     </div>
